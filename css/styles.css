@@ -14,22 +14,35 @@ body {
     padding: 15px 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
+.title{
+    font-size: 45px;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 20px 20px; /* Add padding to the menu items */
+    border-radius: 5px; /* Add border radius for rounded corners */
+}
 
 .menu {
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    justify-content: center; /* Center the menu items horizontally */
+    align-items: center; /* Center the menu items vertically */
 }
 
 .menu a {
     color: white;
     text-decoration: none;
     transition: 0.3s;
+    padding: 20px 20px; /* Add padding to the menu items */
+    border-radius: 5px; /* Add border radius for rounded corners */
 }
 
 .menu a:hover {
-    color: #ddd;
+    background-color: rgba(255, 255, 255, 0.2); /* Add background color on hover */
+    color: #fff;
 }
-
 .search-container {
     display: flex;
     align-items: center;
