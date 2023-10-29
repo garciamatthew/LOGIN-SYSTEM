@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Stylish Navigation Bar</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </div>
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <!-- Inside your login form -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>  
+                <button type="button" id="showPasswordButton">Show Password</button>
+            </div> 
+            <div class="button-container">
+                <button type="button" onclick="validateLogin()">Login</button>
+            </div>
+        </form>
+    </div>
+    
+    
+    
+        
+    <script>
+        var passwordInput = document.getElementById("password");
+        var showPasswordButton = document.getElementById("showPasswordButton");
+        var passwordVisible = false;
+    
+        showPasswordButton.addEventListener("click", function() {
+            passwordVisible = !passwordVisible;
+            if (passwordVisible) {
+                passwordInput.type = "text";
+                showPasswordButton.textContent = "Hide Password";
+            } else {
+                passwordInput.type = "password";
+                showPasswordButton.textContent = "Show Password";
+            }
+        });
+    
+        function validateLogin() {
+            var usernameInput = document.getElementById("username");
+            var username = usernameInput.value;
+            var password = passwordInput.value;
+    
+            if (username === "admin" && password === "password") {
+                alert("Login successful!");
+                // Redirect to the home page (change "home.html" to the actual page you want to redirect to)
+                window.location.href = "home.html";
+            } else {
+                alert("Invalid username or password. Please try again.");
+                // Apply red border style to incorrect input fields
+                usernameInput.style.border = "1px solid red";
+                passwordInput.style.border = "1px solid red";
+            }
+        }
+    </script>
+    
+
+
+</body>
+</html>
